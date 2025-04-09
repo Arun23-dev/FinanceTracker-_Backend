@@ -15,7 +15,7 @@ const categoriesSchema = new Schema({
        category:{
         
             enum:["FoodandBeverge","Shopping","Housing","Transportation","Vehicle","Self-Investment",
-                "Communication","Financial Expenses","Investments","Income","Miscellaneours"],
+                "Communication","Financial Expenses","Investments","Income","Miscellaneous"],
             required:true,
 
        },

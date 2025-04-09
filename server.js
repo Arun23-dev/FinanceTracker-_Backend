@@ -1,9 +1,19 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const main=require('./config/db');
+const app = express();
 const port = 3000;
 
+app.use(express.json());
 
 
-app.listen(port, () => {
-  console.log(`Server running on port no.${port}`)
-})
+
+main().
+  then(() => {
+    console.log("Connected to DB");
+    app.listen(3000, () => {
+      console.log("Listening at port 3000")
+    })
+    }
+  ).catch((err) => {
+    console.log("DB connection failed:", err);
+  })
